@@ -11,7 +11,7 @@ public class FindMissingNumber {
 
         int[] a = {1, 2, 3, 4, 5, 6, 8, 9, 10};
 
-        System.out.println("findMissing1 -> " + findMissing1(a));
+        System.out.println("sumTechnique -> " + sumTechnique(a));
         System.out.println("findMissing2 -> " + findMissing2(a));
         System.out.println("findMissing3 -> " + findMissing3(a));
         System.out.println("findMissing4 -> " + findMissing4(a, 0, (a.length - 1)));
@@ -20,7 +20,7 @@ public class FindMissingNumber {
     /**
      * O(n) as we need to "sum" all the elements
      */
-    public static int findMissing1(int[] a) {
+    public static int sumTechnique(int[] a) {
         int lengthOfFullArray = a.length + 1;
 
         // calculate the sum considering we have all elements

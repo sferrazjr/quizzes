@@ -15,10 +15,9 @@ public class FindMissingNumberTest {
     @Test
     public void shouldReturnMissingNumber_SumTechnique(){
 
-        int actualMissingNumber = FindMissingNumber.findMissing1(incompleteArray);
+        int actualMissingNumber = FindMissingNumber.sumTechnique(incompleteArray);
 
         Assert.assertEquals(expectedMissingNumber,actualMissingNumber);
-
 
     }
 
