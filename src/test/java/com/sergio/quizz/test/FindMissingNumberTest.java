@@ -28,5 +28,14 @@ public class FindMissingNumberTest {
         Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
     }
 
+    @Test
+    public void shouldReturnMissingNumber_MappingTechnique(){
+
+        int actualMissingNumber = FindMissingNumber.findMissing3(incompleteArray);
+
+        Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
+
+    }
+
 
 }
