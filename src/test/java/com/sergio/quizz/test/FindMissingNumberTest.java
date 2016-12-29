@@ -9,13 +9,13 @@ import org.junit.Test;
  */
 public class FindMissingNumberTest {
 
-    int[] incompleArray = {1, 2, 3, 4, 5, 6, 8, 9, 10};
+    int[] incompleteArray = {1, 2, 3, 4, 5, 6, 8, 9, 10};
     int expectedMissingNumber = 7;
 
     @Test
     public void shouldReturnMissingNumber_SumTechnique(){
 
-        int actualMissingNumber = FindMissingNumber.findMissing1(incompleArray);
+        int actualMissingNumber = FindMissingNumber.findMissing1(incompleteArray);
 
         Assert.assertEquals(expectedMissingNumber,actualMissingNumber);
 
