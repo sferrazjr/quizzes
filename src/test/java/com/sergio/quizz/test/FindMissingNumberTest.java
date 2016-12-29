@@ -31,7 +31,7 @@ public class FindMissingNumberTest {
     @Test
     public void shouldReturnMissingNumber_MappingTechnique(){
 
-        int actualMissingNumber = FindMissingNumber.findMissing3(incompleteArray);
+        int actualMissingNumber = FindMissingNumber.mappingTechnique(incompleteArray);
 
         Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
 

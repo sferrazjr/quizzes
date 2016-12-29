@@ -13,7 +13,7 @@ public class FindMissingNumber {
 
         System.out.println("sumTechnique -> " + sumTechnique(a));
         System.out.println("sequentialSearchTechnique -> " + sequentialSearchTechnique(a));
-        System.out.println("findMissing3 -> " + findMissing3(a));
+        System.out.println("mappingTechnique -> " + mappingTechnique(a));
         System.out.println("findMissing4 -> " + findMissing4(a, 0, (a.length - 1)));
     }
 
@@ -49,7 +49,7 @@ public class FindMissingNumber {
     /**
      * O(n) as we need to transverse the array to get the flags
      */
-    public static int findMissing3(int[] a) {
+    public static int mappingTechnique(int[] a) {
         // put all the possible numbers in a Map with a flag set as false
         Map<Integer, Boolean> values = new HashMap<>();
         IntStream.range(1, (a.length + 1)).forEach(i -> values.put(i, false) );
