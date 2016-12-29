@@ -18,6 +18,14 @@ public class FindMissingNumberTest {
         int actualMissingNumber = FindMissingNumber.sumTechnique(incompleteArray);
 
         Assert.assertEquals(expectedMissingNumber,actualMissingNumber);
+    }
+
+    @Test
+    public void shouldReturnMissingNumber_SequentialSearchTechnique(){
+
+        int actualMissingNumber = FindMissingNumber.findMissing2(incompleteArray);
+
+        Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
 
     }
 
