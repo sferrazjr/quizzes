@@ -23,10 +23,9 @@ public class FindMissingNumberTest {
     @Test
     public void shouldReturnMissingNumber_SequentialSearchTechnique(){
 
-        int actualMissingNumber = FindMissingNumber.findMissing2(incompleteArray);
+        int actualMissingNumber = FindMissingNumber.sequentialSearchTechnique(incompleteArray);
 
         Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
-
     }
 
 

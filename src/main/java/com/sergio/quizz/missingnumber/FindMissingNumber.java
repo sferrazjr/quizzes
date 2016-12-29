@@ -12,7 +12,7 @@ public class FindMissingNumber {
         int[] a = {1, 2, 3, 4, 5, 6, 8, 9, 10};
 
         System.out.println("sumTechnique -> " + sumTechnique(a));
-        System.out.println("findMissing2 -> " + findMissing2(a));
+        System.out.println("sequentialSearchTechnique -> " + sequentialSearchTechnique(a));
         System.out.println("findMissing3 -> " + findMissing3(a));
         System.out.println("findMissing4 -> " + findMissing4(a, 0, (a.length - 1)));
     }
@@ -36,7 +36,7 @@ public class FindMissingNumber {
     /**
      * O(n) as in the worst case we need to transverse all the array
      */
-    public static int findMissing2(int[] a) {
+    public static int sequentialSearchTechnique(int[] a) {
         // iterate over the list and compare if it is sequential, otherwise return the missing value
         for (int i = 1; i <= a.length; i++) {
             if (a[i - 1] != i) {
