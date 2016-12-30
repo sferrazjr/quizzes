@@ -14,7 +14,7 @@ public class FindMissingNumber {
         System.out.println("sumTechnique -> " + sumTechnique(a));
         System.out.println("sequentialSearchTechnique -> " + sequentialSearchTechnique(a));
         System.out.println("mappingTechnique -> " + mappingTechnique(a));
-        System.out.println("findMissing4 -> " + findMissing4(a, 0, (a.length - 1)));
+        System.out.println("divideAndSearchTechnique -> " + divideAndSearchTechnique(a, 0, (a.length - 1)));
     }
 
     /**
@@ -69,7 +69,7 @@ public class FindMissingNumber {
     /**
      * O(log n) as we do a recursive call and ignore half of the array each time
      */
-    public static int findMissing4(int[] a, int left, int right) {
+    public static int divideAndSearchTechnique(int[] a, int left, int right) {
         // find the missing number
         if (left == (right - 1)) {
             return a[right] - 1;
@@ -86,11 +86,11 @@ public class FindMissingNumber {
 
         // if the middleIndex contains the average means that the array until this position is ok, so we check from middle and onwards
         if (a[middleIndex] == (middleValue - remainder)) {
-            return findMissing4(a, middleIndex, right);
+            return divideAndSearchTechnique(a, middleIndex, right);
         }
         // otherwise means that the missing number is before that, so we check from the middle and backwards
         else {
-            return findMissing4(a, left, middleIndex);
+            return divideAndSearchTechnique(a, left, middleIndex);
         }
     }
 
