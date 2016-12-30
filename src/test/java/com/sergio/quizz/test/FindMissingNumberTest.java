@@ -9,7 +9,7 @@ import org.junit.Test;
  */
 public class FindMissingNumberTest {
 
-    int[] incompleteArray = {1, 2, 3, 4, 5, 6, 8, 9, 10};
+    int[] incompleteArray = {0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11};
     int expectedMissingNumber = 7;
 
     @Test
@@ -40,7 +40,10 @@ public class FindMissingNumberTest {
     @Test
     public void shouldReturnMissingNumber_DivideAndSearchTechnique(){
 
-        int actualMissingNumber = FindMissingNumber.divideAndSearchTechnique(incompleteArray, 0, incompleteArray.length-1);
+        int actualMissingNumber = FindMissingNumber.divideAndSearchTechnique(
+                incompleteArray,
+                incompleteArray[0],
+                incompleteArray.length-1);
 
         Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
 

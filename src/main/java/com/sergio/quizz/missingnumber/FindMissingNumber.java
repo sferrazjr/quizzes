@@ -1,5 +1,6 @@
 package com.sergio.quizz.missingnumber;
 
+import java.time.Clock;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -70,26 +71,26 @@ public class FindMissingNumber {
      * O(log n) as we do a recursive call and ignore half of the array each time
      */
     public static int divideAndSearchTechnique(int[] a, int left, int right) {
+
         // find the missing number
-        if (left == (right - 1)) {
+        if (left == (right - 1))
             return a[right] - 1;
-        }
 
         // get the middle index
-        int middleIndex = left + (right - left) / 2;
+        int middleIndex = left + ((right - left) / 2);
 
         // get the average value
-        int middleValue = a[left] + (a[right] - a[left]) / 2;
+        int middleValue = a[left] + ((a[right] - a[left]) / 2);
 
-        // get the remainder in case of odd/even middleIndex
+        // get the remainder in case of odd middleIndex
         int remainder = (right - left) % 2;
 
-        // if the middleIndex contains the average means that the array until this position is ok, so we check from middle and onwards
+        // if the middleIndex is the average then the left side is ok
         if (a[middleIndex] == (middleValue - remainder)) {
+            //then check the right side
             return divideAndSearchTechnique(a, middleIndex, right);
-        }
-        // otherwise means that the missing number is before that, so we check from the middle and backwards
-        else {
+        } else {
+            //else check the left side
             return divideAndSearchTechnique(a, left, middleIndex);
         }
     }
