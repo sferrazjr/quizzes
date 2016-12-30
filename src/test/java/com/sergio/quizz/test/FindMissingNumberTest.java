@@ -37,5 +37,14 @@ public class FindMissingNumberTest {
 
     }
 
+    @Test
+    public void shouldReturnMissingNumber_DivideAndSearchTechnique(){
+
+        int actualMissingNumber = FindMissingNumber.findMissing4(incompleteArray, 0, incompleteArray.length-1);
+
+        Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
+
+    }
+
 
 }
