@@ -40,10 +40,7 @@ public class FindMissingNumberTest {
     @Test
     public void shouldReturnMissingNumber_DivideAndSearchTechnique(){
 
-        int actualMissingNumber = FindMissingNumber.divideAndSearchTechnique(
-                incompleteArray,
-                incompleteArray[0],
-                incompleteArray.length-1);
+        int actualMissingNumber = FindMissingNumber.divideAndSearchTechnique(incompleteArray);
 
         Assert.assertEquals(expectedMissingNumber, actualMissingNumber);
 

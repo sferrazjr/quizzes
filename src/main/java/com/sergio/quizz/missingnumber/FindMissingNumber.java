@@ -1,6 +1,5 @@
 package com.sergio.quizz.missingnumber;
 
-import java.time.Clock;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +14,7 @@ public class FindMissingNumber {
         System.out.println("sumTechnique -> " + sumTechnique(a));
         System.out.println("sequentialSearchTechnique -> " + sequentialSearchTechnique(a));
         System.out.println("mappingTechnique -> " + mappingTechnique(a));
-        System.out.println("divideAndSearchTechnique -> " + divideAndSearchTechnique(a, 0, (a.length - 1)));
+        System.out.println("divideAndSearchTechnique -> " + divideAndSearchTechnique(a));
     }
 
     /**
@@ -70,8 +69,11 @@ public class FindMissingNumber {
     /**
      * O(log n) as we do a recursive call and ignore half of the array each time
      */
-    public static int divideAndSearchTechnique(int[] a, int left, int right) {
+    public static int divideAndSearchTechnique(int[] myArray) {
+        return searchMissingNumber(myArray, myArray[0], myArray.length-1);
+    }
 
+    private static int searchMissingNumber(int[] a, int left, int right) {
         // find the missing number
         if (left == (right - 1))
             return a[right] - 1;
@@ -88,10 +90,10 @@ public class FindMissingNumber {
         // if the middleIndex is the average then the left side is ok
         if (a[middleIndex] == (middleValue - remainder)) {
             //then check the right side
-            return divideAndSearchTechnique(a, middleIndex, right);
+            return searchMissingNumber(a, middleIndex, right);
         } else {
             //else check the left side
-            return divideAndSearchTechnique(a, left, middleIndex);
+            return searchMissingNumber(a, left, middleIndex);
         }
     }
 
